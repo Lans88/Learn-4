@@ -1,0 +1,45 @@
+//Множества более подробно
+//Создание пустого множества, каждая строка - это вариация создания пустого множества.
+let setOne = Set<String>()
+let setTwo: Set<String> = []
+var setThree: Set = [1, 2, 3, 4]
+
+//Добавление значения во мно-во
+setThree.insert(5)
+print (setThree)
+
+//Покажет пустое множество или нет, если не пустое - то ФОЛС
+setThree.isEmpty
+
+//Покажет количество значений во мно-ве
+setThree.count
+
+//Удаление выбранного элемента множества
+setThree.remove(2)
+
+//Проверка наличия элемента во множестве, ответом будет тру/фолс соответственно
+setThree.contains(1)
+
+//Указанную выше команду можно присвоить константе и исп в дальнейшем
+let boolValue = setThree.contains(1)
+print (boolValue)
+
+//Пример исп методов во множествах
+let setFromOneToThree: Set = [1, 2, 3, 4]
+let setFromFourToNine: Set = [1, 2, 4, 5, 6, 7, 8, 9]
+
+//Создание массива содержащего элементы двух мно-в
+let allValueArray = setFromOneToThree.union(setFromFourToNine).sorted() //Объединили элементы 2х мно-в и выполнили сортировку по возрастанию
+print (allValueArray)
+
+//Объединение элементов 2х мн-в и поиск одинаковых значений
+let commonValueSet = setFromOneToThree.intersection(setFromFourToNine)//в данному случае мн-во будет пустым, т.к. нет одинаковых элементов
+
+//Определение различий между мн-вами
+//Создаем массив, который покажет разницу в элементах
+let notRepeatValueArray = setFromOneToThree.symmetricDifference(setFromFourToNine).sorted()
+print (notRepeatValueArray)// на экран вывелись элементы, которые не повторяются во мн-вах
+
+//Вывод на экран значений, которые не повторяются во втором мн-ве
+let substractedValueArray = setFromOneToThree.subtracting(setFromFourToNine).sorted()
+print (substractedValueArray)
